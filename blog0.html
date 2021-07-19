@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Grayscale - Start Bootstrap Theme</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">D Eeswar</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="achievments.html">Achievments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="contact-section bg-black">
+        <div class="container px-4 px-lg-5" style="color: white;margin-top: 35px;padding-bottom: 30px;">
+
+            <h1 style="text-align: center;">Blogs</h1>
+            <hr>
+            <h1 class="display-4" style="margin-top: 2%;">How I found my first <b><span id="pinktext">RCE?</span></b></h1>
+            <hr style="height:4px;">
+            <p>Hello everyone, this is a story of how I found my first RCE on a bug bounty program.<br> This is a private program and doesn't allow disclosure so let us assume that our target is redacted.com. This is a wide scope target. So, after running
+                my subdomain enumeration scripts I passed the subdomains into <kbd>httpx</kbd> to get live subdomains.<br> I had over <kbd><span id="pinktext">14k</span></kbd> unique targets after probing. At this point, I was searching for keywords like
+                <kbd>internal, staging, stg, developer, admin, etc</kbd>.<br> While testing these interesting domains manually, I also ran the <kbd><span id='pinktext'>nuclei</span></kbd> technologies template on the live subdomains to see what technologies
+                the target was using. Upon running this and parsing the output, I found out that one of the subdomains let us say <kbd><span id='bluetext'>'vuln.redacted.com'</span></kbd> was using <kbd><span id='pinktext'>Oracle WebLogic</span></kbd>.
+                <br>I knew there were <kbd><span id='bluetext'>CVEs</span></kbd> for weblogic. I ran the CVE templates from nuclei on <kbd><span id='bluetext'>'vuln.redacted.com'</span></kbd>. As I was expecting nuclei detected <kbd><span id='pinktext'>CVE-2017-10271</span> on <kbd><span id='bluetext'>'vuln.redacted.com'</span></kbd>.<br>
+                <kbd><span id='bluetext'>Vulnerable URL</span> : <span id="pinktext">https://vuln.redacted.com/wls-wsat/CoodinatorPortType</span></kbd>
+
+                <h1 class="display-4" style="margin-top: 2%;"><span id="bluetext">Exploiting </span><span id="pinktext">CVE-2017-10271</span></h1>
+                <hr style="height:4px;">
+                <p>In this section, we will be looking at how I exploited the and two mistakes I made while exploiting. One mistake was out of excitement of getting my first rce and other was a observational mistake.<br> At this point I stared googling for
+                    CVE-2017-10271 POC and also I have a poc from nuclei template.<br> Let's now look at steps to exploit CVE.<br> I intecepted the request in burp which looks like this.</p>
+                <script src="https://gist.github.com/fantasticpanthom/7ebdf50a7f5f7dc04a855a75088b3871.js"></script>
+                <p>Without any second thoughts I attached payload to the get request and forwarded it.</p>
+                <script src="https://gist.github.com/fantasticpanthom/50f203abe50fe7df04d6c2f5db53255c.js"></script>
+                <p>Ofcourse the exploit did not work, I was supposed to make a POST request but instead out of excitement, I made a GET request.Realising my mistakes soon I change the request method to POST and send the below request.</p>
+                <script src="https://gist.github.com/fantasticpanthom/b6cc321107244b074ef81a3c24311100.js"></script>
+                <p>This should work right? NO , it did not. The server threw the below error this time.</p>
+                <script src="https://gist.github.com/fantasticpanthom/5baf67ee5165a326d324b12c2a2fe4ca.js"></script>
+                <p>What is the issue this time?<br> The <span id='bluetext'>Content-Type</span> entity header is used to indicate the media type of the resource.<br> We are playing with xml data but if we notice carefully Content-Type is set to <kbd><span id='pinktext'>application/x-www-form-urlencoded</span></kbd>.
+                    For our exploit to work we need to set it to <kbd><span id='pinktext'>text/xml</span></kbd>.<br> The final error free POST request using which I could exploit the vulnerability is
+                </p>
+                <script src="https://gist.github.com/fantasticpanthom/dfbb7d8a2fb7a4972bb4fd70ce594681.js"></script>
+                <p>On sending above request, the response came with a delay of approx <span id='pinktext'>12 seconds</span> which proved I had java code execution.<br> Then I used the below paylaod from nuclei template to read <kbd><span id='bluetext'>/etc/passwd of remote server</span></kbd></p>
+                <script src="https://gist.github.com/fantasticpanthom/62881a1c0271067203ec7b9562abcc82.js"></script>
+                <p>
+                    This is the story of my first remote execution and hope you learn from the mistakes I made which could have cost me my first rce.<br> Hope you enjoyed reading this and if you have any suggestions related to this or want to discuss
+                    with me about some security related stuff feel free to contact me. <a class="navbar-brand" href="index.html"><kbd>HOME</kbd></a> has my contact information.<br> HAPPY <span id="pinktext">LEARNING</span> and HAPPY <span id="bluetext">HACKING</span>                    !!!.
+                </p>
+
+        </div>
+    </section>
+    <section class="contact-section bg-black">
+        <div class="container px-4 px-lg-5">
+
+            <header class="masthead2" style="height: fit-content;">
+                <div class="container">
+                    <div style="text-align: center;width: 100%;">
+                        <div style="color: white;">
+                            <h1 class="text-uppercase" style="text-align: center;">Trust Me</h1>
+                            <div style="opacity: 0.5;">For more details contact</div>
+                            <h3 style="opacity: 0.5;">Email - youremail@gmail.com</h3>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="social d-flex justify-content-center">
+                <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+        <div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>

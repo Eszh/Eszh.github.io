@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Grayscale - Start Bootstrap Theme</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<script>
+    blink();
+    var temp = 0;
+
+    function toggleUnderScore() {
+        console.log(temp);
+        if (temp == 0) {
+            document.getElementById('underscore').classList.add('hidden');
+            temp = 1;
+        } else {
+            document.getElementById('underscore').classList.remove('hidden');
+            temp = 0;
+        }
+    }
+
+    function blink() {
+        setInterval(function() {
+            toggleUnderScore();
+        }, 1000);
+    }
+</script>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top" style="color: blue;font-size: 25px;">cd /Eszh/<span id="underscore" style="color: green;"><h1 style="display: inline;">_</h1></span></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="achievments.html">Achievments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center">
+            <div style="text-align: center;width: 100%;">
+                <div>
+                    <h1 class="text-uppercase" style="text-align: center;">D Eeswar</h1>
+                    <div class="text-white-50" style="margin:40px 5px;">
+                        <h1><i class="fas fa-desktop"></i> <i class="fas fa-code"></i> <i class="fas fa-globe-americas"></i> <i class="fab fa-linux"></i></h1>
+                    </div>
+                    <div class="text-white-50" style="font-size: 20px;margin-bottom: 20px;">Top 1000 in World at Google Hacker's Ranking | Red Team Member | Bug Bounty Hunter | </div>
+                    <a class="btn btn-primary" href="#about">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-9">
+                    <h2 class="text-white mb-4">Projects </h2>
+                    <hr style="color: white;">
+                    <div style="color: white;">
+                        <div class="projectTile row" style="margin-bottom: 30px;">
+                            <!--project item start -->
+                            <div class="col-md-6" style='margin-top: 20px;'>
+                                <h2 class="heading">Fire Fighting Robot</h2>
+                                <div class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae odit voluptas autem fugit. Aspernatur iure, corrupti temporibus laudantium perspiciatis eaque exercitationem corporis suscipit doloribus. Magnam impedit maiores
+                                    temporibus placeat laboriosam?
+                                </div>
+                            </div>
+                            <!--project item  end-->
+                            <div class="col-md-6" style='margin-top: 20px;'>
+                                <h2 class="heading">Fire Fighting Robot</h2>
+                                <div class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae odit voluptas autem fugit. Aspernatur iure, corrupti temporibus laudantium perspiciatis eaque exercitationem corporis suscipit doloribus. Magnam impedit maiores
+                                    temporibus placeat laboriosam?
+                                </div>
+                            </div>
+                            <div class="col-md-6" style='margin-top: 20px;'>
+                                <h2 class="heading">Fire Fighting Robot</h2>
+                                <div class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae odit voluptas autem fugit. Aspernatur iure, corrupti temporibus laudantium perspiciatis eaque exercitationem corporis suscipit doloribus. Magnam impedit maiores
+                                    temporibus placeat laboriosam?
+                                </div>
+                            </div>
+                            <!--paste above this line for new project-->
+                        </div>
+                        <h2 class="text-white mb-4">Internships </h2>
+                        <hr style="color: white;">
+                        <div>
+                            <table class="table" style="color: white;text-align: left;">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Company</th>
+                                        <th scope="col">Role</th>
+                                        <th scope="col">Duration</th>
+                                        <th scope="col">Year of completion</th>
+                                        <th scope="col">certificate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Fresh Digital</th>
+                                        <td>Pen Tester</td>
+                                        <td>3 Months</td>
+                                        <td>On going</td>
+                                        <td><a target="_blank" href="pdfs/FD Red Team Pentesting Certificate-Dronavalli Eeshwar.pdf" style="color: #f02c54;">click here</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Sparks Foundation</th>
+                                        <td>Web development Intern</td>
+                                        <td>1 Month</td>
+                                        <td>January 2020</td>
+                                        <td><a target="_blank" href="pdfs/2nd intern.pdf" style="color: #f02c54;">click here</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">SEDS-Projects club VIT-AP</th>
+                                        <td>Software team member</td>
+                                        <td>1 year</td>
+                                        <td>On going</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h2 class="text-white mb-4" style="margin-top: 45px;">Skills </h2>
+                        <hr style="color: white;">
+                        <div class="skillsBody" style="text-align: center;">
+                            <div class="skill row" style="text-align: center;">
+                                <div class="col-md-4">
+                                    <h1><i class="fab fa-linux"></i></h1>
+                                    <h3>Linux</h3>
+                                </div>
+                                <div class="col-md-4">
+                                    <h1><i class="fab fa-android"></i></h1>
+                                    <h3>Android</h3>
+                                </div>
+                                <div class="col-md-4">
+                                    <h1><i class="fab fa-apple"></i></h1>
+                                    <h3>IOS</h3>
+                                </div>
+                                <div class="col-md-4">
+                                    <h1><i class="fab fa-cuttlefish"></i></h1>
+                                    <h3>C Language</h3>
+                                </div>
+                                <div class="col-md-4">
+                                    <h1><i class="fab fa-java"></i></h1>
+                                    <h3>Java</h3>
+                                </div>
+                                <div class="col-md-4">
+                                    <h1><i class="fab fa-python"></i></h1>
+                                    <h3>Python</h3>
+                                </div>
+                                <div class="col-md-4">
+                                    <h1><i class="fas fa-code"></i></h1>
+                                    <h3>GoLang</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects-->
+    <section class="projects-section " id="blogs">
+        <div class="container px-4 px-lg-5">
+            <!-- Featured Project Row-->
+            <h1 style="text-align: center;">Blogs</h1>
+            <hr>
+            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                <div class="col-xl-5 col-lg-5"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="..." /></div>
+                <div class="col-xl-7 col-lg-7">
+                    <div class="featured-text text-center text-lg-left" style="background-color: black;font-size:large">
+                        <h4><a href="blog0.html">Shoreline</a> </h4>
+                        <p class=" mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                <div class="col-xl-7 col-lg-7">
+                    <div class="featured-text text-center text-lg-left" style="background-color: black;font-size:large">
+                        <h4><a href="https://shahjerry33.medium.com/cross-site-port-attack-a-strangers-call-c2467f93792f">Shoreline</a></h4>
+                        <p class=" mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-5"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="..." /></div>
+
+            </div>
+            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                <div class="col-xl-5 col-lg-5"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="..." /></div>
+                <div class="col-xl-7 col-lg-7">
+                    <div class="featured-text text-center text-lg-left" style="background-color: black;font-size:large">
+                        <h4>Shoreline</h4>
+                        <p class=" mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin: 15px auto;width: fit-content;">
+                <a class="btn btn-primary" href="blog.html">
+                    <h3>View All</h3>
+                </a>
+                </button>
+            </div>
+        </div>
+        <!-- Project One Row-->
+
+    </section>
+
+    <!-- Contact-->
+    <section class="contact-section bg-black" id="contact">
+        <div class="container px-4 px-lg-5">
+
+            <header class="masthead2" style="height: fit-content;">
+                <div class="container">
+                    <div style="text-align: center;width: 100%;">
+                        <div style="color: white;">
+                            <h1 class="text-uppercase" style="text-align: center;">Trust Me</h1>
+                            <div style="opacity: 0.5;">For more details contact</div>
+                            <h3 style="opacity: 0.5;">Email - youremail@gmail.com</h3>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="social d-flex justify-content-center">
+                <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+        <div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>
