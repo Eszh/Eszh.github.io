@@ -16,57 +16,67 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
-    <style>.wrapper{
-  display: flex;
-}
-.wrapper .static-txt{
-  color: #fff;
-  font-size: 60px;
-  font-weight: 400;
-}
-.wrapper .dynamic-txts{
-  margin-left: 15px;
-  height: 90px;
-  line-height: 90px;
-  overflow: hidden;
-}
-.dynamic-txts li{
-  list-style: none;
-  color: #6da8fc;
-  font-size: 60px;
-  font-weight: 500;
-  position: relative;
-  top: 0;
-  animation: slide 12s steps(4) infinite;
-}
-@keyframes slide {
-  100%{
-    top: -360px;
-  }
-}
-.dynamic-txts li span{
-  position: relative;
-  margin: 5px 0;
-  line-height: 90px;
-}
-.dynamic-txts li span::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: #343F4F;
-  border-left: 2px solid #FC6D6D;
-  animation: typing 3s steps(10) infinite;
-}
-@keyframes typing {
-  40%, 60%{
-    left: calc(100% + 30px);
-  }
-  100%{
-    left: 0;
-  }
-}</style>
+<style>
+    .wrapper {
+        display: flex;
+    }
+    
+    .wrapper .static-txt {
+        color: #fff;
+        font-size: 60px;
+        font-weight: 400;
+    }
+    
+    .wrapper .dynamic-txts {
+        margin-left: 15px;
+        height: 90px;
+        line-height: 90px;
+        overflow: hidden;
+    }
+    
+    .dynamic-txts li {
+        list-style: none;
+        color: #6da8fc;
+        font-size: 60px;
+        font-weight: 500;
+        position: relative;
+        top: 0;
+        animation: slide 12s steps(4) infinite;
+    }
+    
+    @keyframes slide {
+        100% {
+            top: -360px;
+        }
+    }
+    
+    .dynamic-txts li span {
+        position: relative;
+        margin: 5px 0;
+        line-height: 90px;
+    }
+    
+    .dynamic-txts li span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: #00040a;
+        border-left: 2px solid #FC6D6D;
+        animation: typing 3s steps(10) infinite;
+    }
+    
+    @keyframes typing {
+        40%,
+        60% {
+            left: calc(100% + 30px);
+        }
+        100% {
+            left: 0;
+        }
+    }
+</style>
 <script>
     blink();
     var temp = 0;
@@ -126,18 +136,18 @@
                     <h1 class="text-uppercase" style="text-align: center;">Eszh</h1>
                     <div class="text-white-50" style="margin:40px 5px;">
                         <h1><i class="fas fa-desktop"></i> <i class="fas fa-code"></i> <i class="fas fa-globe-americas"></i> <i class="fab fa-linux"></i></h1>
-                    </div><div>
-                    <div class="wrapper">
-    <div class="static-txt">I'm a</div>
-    <ul class="dynamic-txts">
-      <li><span>Google's Top 1000 Hacker</span></li>
-      <li><span>CTF Player</span></li>
-      <li><span> Secured 30+ websites</span></li>
-      <li><span>Penetration Tester</span></li>
-      <li><span>Red Teamer</span></li>
-    </ul>
-  </div>
-                   
+                    </div>
+                    <div>
+                        <div class="wrapper">
+                            <ul class="dynamic-txts">
+                                <li><span>Google's Top 1000 Hacker</span></li>
+                                <li><span>CTF Player</span></li>
+                                <li><span> Secured 30+ websites</span></li>
+                                <li><span>Penetration Tester</span></li>
+                                <li><span>Red Teamer</span></li>
+                            </ul>
+                        </div>
+
                     </div>
                     <a class="btn btn-primary" href="#about">Get Started</a>
                 </div>
@@ -156,16 +166,18 @@
                             <!--project item start -->
                             <div class="col-md-6" style='margin-top: 20px;'>
                                 <h2 class="heading">Fire Fighting Robot</h2>
-                                <div class="body">A fire-fighting robot  equipped with equipment such as PIR, Ultrasonic, Flame, Temperature and Humidity sensors which senses the fire, human casualties, monitoring temperature and humidity of the surrounding and distance between the robot and the obstruction in front
+                                <div class="body">A fire-fighting robot equipped with equipment such as PIR, Ultrasonic, Flame, Temperature and Humidity sensors which senses the fire, human casualties, monitoring temperature and humidity of the surrounding and distance
+                                    between the robot and the obstruction in front
                                 </div>
                             </div>
                             <!--project item  end-->
                             <div class="col-md-6" style='margin-top: 20px;'>
                                 <h2 class="heading">Smart Wheel Chair</h2>
-                                <div class="body"> The wheelchair can be used for various purposes including as an panic alarm.If the person needs instant help,he/she can immediately hit the alarm button so that someone can come for help,this can also can an led light,so anyone can roam here and there when surroundings has not enough light.
+                                <div class="body"> The wheelchair can be used for various purposes including as an panic alarm.If the person needs instant help,he/she can immediately hit the alarm button so that someone can come for help,this can also can an led light,so
+                                    anyone can roam here and there when surroundings has not enough light.
                                 </div>
                             </div>
-                           
+
                             <!--paste above this line for new project-->
                         </div>
                         <h2 class="text-white mb-4">Internships </h2>
@@ -256,7 +268,8 @@
                 <div class="col-xl-7 col-lg-7">
                     <div class="featured-text text-center text-lg-left" style="background-color: black;font-size:large">
                         <h4><a href="https://medium.com/@eeshwardronavalli1/cyber-security-80d8caddb8f2">Cyber security </a> </h4>
-                        <p class=" mb-0">Why is it important to protect critical systems and sensitive information from digital attacks? Cybersecurity or information technology security is the protection of computer systems and networks from information disclosure, theft of or damage to their hardware, software, or electronic data, as well as from the disruption or misdirection of the services they provide.</p>
+                        <p class=" mb-0">Why is it important to protect critical systems and sensitive information from digital attacks? Cybersecurity or information technology security is the protection of computer systems and networks from information disclosure, theft
+                            of or damage to their hardware, software, or electronic data, as well as from the disruption or misdirection of the services they provide.</p>
                     </div>
                 </div>
             </div>
@@ -275,7 +288,8 @@
                 <div class="col-xl-7 col-lg-7">
                     <div class="featured-text text-center text-lg-left" style="background-color: black;font-size:large">
                         <h4><a href="blog0.html">Cross Site Port Attack</a></h4>
-                        <p class=" mb-0">Cross Site Port Attack is an abbreviation of XSPA. In this attack an application processes user supplied URLs and does not verify or sanitize the back end response received from remote servers before sending it back to the client. An attacker can send crafted queries to a vulnerable web application to proxy attacks to external Internet facing servers, intranet devices and the web server itself.</p>
+                        <p class=" mb-0">Cross Site Port Attack is an abbreviation of XSPA. In this attack an application processes user supplied URLs and does not verify or sanitize the back end response received from remote servers before sending it back to the client.
+                            An attacker can send crafted queries to a vulnerable web application to proxy attacks to external Internet facing servers, intranet devices and the web server itself.</p>
                     </div>
                 </div>
             </div>
@@ -306,7 +320,7 @@
                 </div>
             </header>
             <div class="social d-flex justify-content-center">
-              <a class="mx-2" href="https://twitter.com/Eshwar28296528"><i class="fab fa-twitter"></i></a>
+                <a class="mx-2" href="https://twitter.com/Eshwar28296528"><i class="fab fa-twitter"></i></a>
                 <a class="mx-2" href="https://www.facebook.com/eeshwar.dronavalli"><i class="fab fa-facebook-f"></i></a>
                 <a class="mx-2" href="https://github.com/Eszh/"><i class="fab fa-github"></i></a>
                 <a class="mx-2" href="https://www.linkedin.com/in/eeshwar-dronavalli-5a16ba16a/"><i class="fab fa-linkedin"></i></a>
